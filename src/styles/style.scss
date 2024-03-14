@@ -1,1 +1,48 @@
-@use "./reset"
+@use "./reset";
+
+$primary-color: antiquewhite;
+$secondary-color: black;
+
+body{
+    background-color: $primary-color;
+    display: flex;
+    justify-content: center;
+}
+
+
+.div__heading{
+    display: flex;
+    justify-content: space-around;
+    margin:10px;
+         &--num{
+            border: 2px solid black;
+            border-radius: 50% ;
+            width: 2rem;
+         }
+        &--reset{
+            width: 2rem;
+        }
+}
+
+.quiz__question{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.answers{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 15rem;
+    margin: 0 auto;
+        &__button{
+            margin: 5px;
+        }
+}
+
+@media screen and (min-width: 768px){
+    .quiz__container{
+        width: 100%;
+        
+    }
+}
