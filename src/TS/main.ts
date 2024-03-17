@@ -10,9 +10,9 @@ const answerButtonA = document.querySelector<HTMLButtonElement>(".answers__butto
 const answerButtonB =document.querySelector<HTMLButtonElement>(".answers__button--b");
 const answerButtonC = document.querySelector<HTMLButtonElement>(".answers__button--c");
 const answerButtonD = document.querySelector<HTMLButtonElement>(".answers__button--d");
-const bodyContainer = document.querySelector<HTMLBodyElement>("body")
 
-if(!questionNumber || !resetButton || !livesCounter || !changeQuestion || !answerButtonA || !answerButtonB || ! answerButtonC || ! answerButtonD || !bodyContainer){
+
+if(!questionNumber || !resetButton || !livesCounter || !changeQuestion || !answerButtonA || !answerButtonB || !answerButtonC || !answerButtonD  ){
     throw new Error("No")
 };
 
@@ -29,29 +29,30 @@ resetButton.addEventListener("click", handleResetButton)
 let currentQuestion = 0;
 
 const changeQuestionHTML = () => {
-    const pregunta = questionBank[currentQuestion]; 
-    questionNumber.innerHTML = pregunta.questionNum.toString();
-    changeQuestion.innerHTML = pregunta.question;
+    const query = questionBank[currentQuestion]; 
+    questionNumber.innerHTML = query.questionNum.toString();
+    changeQuestion.innerHTML = query.question;
     // add the images for questions that have images. 
-    answerButtonA.innerHTML = pregunta.possibleAns[0]
-    answerButtonB.innerHTML = pregunta.possibleAns[1];
-    answerButtonC.innerHTML = pregunta.possibleAns[2];
-    answerButtonD.innerHTML = pregunta.possibleAns[3]; 
+    answerButtonA.innerHTML = query.possibleAns[0]
+    answerButtonB.innerHTML = query.possibleAns[1];
+    answerButtonC.innerHTML = query.possibleAns[2];
+    answerButtonD.innerHTML = query.possibleAns[3]; 
 };
 
 changeQuestionHTML();
  let livesCounterIndex = 3;
 //handle a lives lost function when the answer is incorrect
+
 const handleIncorrectAns = () => {
-    let livesCount = "Lives: &hearts; "
-    const livesCounterArray = livesCount.split()
     livesCounterIndex--;
-    livesCounter.textContent = "Lives: &hearts;";
-    if(livesCounterIndex === 0){
-        questionNumber.style.display = "hidden";
-        document.body.style.backgroundColor = "D90808";
+    const constPart = "Lives:";
+    const text = `${constPart} ${'♥'.repeat(livesCounterIndex)}`; 
+    livesCounter.textContent = text; 
+    if (livesCounterIndex === 0) {
+        questionNumber.style.display = "none";
+        document.body.style.backgroundColor = "#d90808";
     }
-}
+};
 
 //validate correct answer, if answer is correct push currentQuestion, if not, lose a life. if all three lives lost, restart from beginning.
 const validateCorrectAns= (answerClicked: string) => {

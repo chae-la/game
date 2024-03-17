@@ -8,31 +8,31 @@ export const questionBank: Question[] = [
     correctAns: "No, but a tin can",
   },
   {
-    questionNum:2,
+    questionNum: 2,
     question: ".SDRAWKCAB NOITSEUQ SIHT REQSNA",
     possibleAns: ["KO", "What?", "I don't understand", "Backwards"],
     correctAns: "KO",
   },
   {
-    questionNum:3,
+    questionNum: 3,
     question: "The answer is REALLY big",
     possibleAns: ["ANSWER", "REALLY Big", "∞", "Whale"],
     correctAns: "Whale",
   },
   {
-    questionNum:4,
+    questionNum: 4,
     question: "What follows December 2nd?",
     possibleAns: ["n", "December 3rd", "a Question Mark", "What"],
     correctAns: "n",
   },
   {
-    questionNum:5,
+    questionNum: 5,
     question: "What is the 7th letter of the alphabet",
     possibleAns: ["a", "e", "g", "h"],
     correctAns: "h",
   },
   {
-    questionNum:6,
+    questionNum: 6,
     question: "How many letters in their hand?",
     image: "./images/letters.png",
     possibleAns: ["6", "7", "8", "9"],
@@ -73,5 +73,71 @@ export const questionBank: Question[] = [
     question: "What cheese is made backwards?",
     possibleAns: ["Edam", "Brie", "Mozzarella", "Burrata"],
     correctAns: "Edam",
+  },
+  {
+    questionNum: 13,
+    question: "Wales",
+    possibleAns: [
+      "Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogoch",
+      "Lanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch",
+      "Llanfair­pwlgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch",
+      "Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch",
+    ],
+    correctAns:
+      "Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch",
+  },
+  {
+    questionNum: 16,
+    question: "Wait... is this really question 16?",
+    possibleAns: [
+      "No, its 10",
+      "Yeah, it's 16",
+      "Maybe its 14?",
+      "I wasn't paying attention",
+    ],
+    correctAns: "Maybe its 14?",
+  },
+  {
+    questionNum: 15,
+    question: "Can you get this question wrong?",
+    possibleAns: ["NO!", "Of course not", "Nope", "No way"],
+    correctAns: "Of course not",
+  },
+  {
+    questionNum: 16,
+    question:
+      "✋︎ ■︎♏︎❖︎♏︎❒︎ ◆︎■︎♎︎♏︎❒︎⬧︎⧫︎□︎□︎♎︎ ⧫︎♒︎♏︎ ◻︎□︎♓︎■︎⧫︎ □︎♐︎ ⧫︎♒︎♓︎⬧︎ ♐︎□︎■︎⧫︎📬︎",
+    possibleAns: [
+      "❄︎♒︎♓︎⬧︎ ♐︎□︎■︎⧫︎ ♓︎⬧︎ ♋︎⬥︎♏︎⬧︎□︎❍︎♏︎",
+      "☟︎♓︎ 💣︎◆︎❍︎✏︎ ",
+      "🕈︎♒︎♋︎⧫︎✍︎",
+      "💧︎♋︎❍︎♏︎",
+    ],
+    correctAns: "💧︎♋︎❍︎♏︎",
+  },
+  {
+    questionNum: 17,
+    question: "What is this?",
+    image: "./images/happy-can.png",
+    possibleAns: ["American", "Happy Can", "Christmas Can", "Can do attitude"],
+    correctAns: "American",
+  },
+  {
+    questionNum: 18,
+    question: "JFMAMJJASON",
+    possibleAns: ["J", "D", "M", "W"],
+    correctAns: "D",
+  },
+  {
+    questionNum: 19,
+    question: "11011 - 01010",
+    possibleAns: ["100101", "10001", "10010", "11100"],
+    correctAns: "10001",
+  },
+  {
+    questionNum: 20,
+    question: "Just one last thing... pls rate🥺",
+    possibleAns: ["⭐", "⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"],
+    correctAns: "⭐⭐⭐⭐",
   },
 ];
