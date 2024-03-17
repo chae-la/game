@@ -1,15 +1,18 @@
 import { questionBank } from "./data.ts";
 
+console.log(questionBank)  
+
 const questionNumber = document.querySelector<HTMLHeadingElement>(".div__heading--num");
 const resetButton = document.querySelector<HTMLButtonElement>(".div__heading--reset");
 const livesCounter = document.querySelector<HTMLHeadingElement>(".div__heading--lives");
 const changeQuestion = document.querySelector<HTMLHeadingElement>(".quiz__question");
 const answerButtonA = document.querySelector<HTMLButtonElement>(".answers__button--a");
 const answerButtonB =document.querySelector<HTMLButtonElement>(".answers__button--b");
-const answerButtonC = document.querySelector<HTMLButtonElement>("answers__button--c");
-const answerButtonD = document.querySelector<HTMLButtonElement>("answers__button--d");
+const answerButtonC = document.querySelector<HTMLButtonElement>(".answers__button--c");
+const answerButtonD = document.querySelector<HTMLButtonElement>(".answers__button--d");
+const bodyContainer = document.querySelector<HTMLBodyElement>("body")
 
-if(!questionNumber || !resetButton || !livesCounter || !changeQuestion || !answerButtonA || !answerButtonB || ! answerButtonC || ! answerButtonD){
+if(!questionNumber || !resetButton || !livesCounter || !changeQuestion || !answerButtonA || !answerButtonB || ! answerButtonC || ! answerButtonD || !bodyContainer){
     throw new Error("No")
 };
 
@@ -19,29 +22,70 @@ const handleResetButton = () => {
 }
 resetButton.addEventListener("click", handleResetButton)
 
-//change question number
 
 
+//change questions, where each button has a different answer
 
-//change questions 
 let currentQuestion = 0;
 
 const changeQuestionHTML = () => {
     const pregunta = questionBank[currentQuestion]; 
+    questionNumber.innerHTML = pregunta.questionNum.toString();
     changeQuestion.innerHTML = pregunta.question;
+    // add the images for questions that have images. 
     answerButtonA.innerHTML = pregunta.possibleAns[0]
     answerButtonB.innerHTML = pregunta.possibleAns[1];
     answerButtonC.innerHTML = pregunta.possibleAns[2];
     answerButtonD.innerHTML = pregunta.possibleAns[3]; 
-    };
+};
 
-    changeQuestionHTML();
-console.log(answerButtonA)
-//validate correct answer
-// const validateCorrectAns = () => {
-    
-// }
+changeQuestionHTML();
+ let livesCounterIndex = 3;
+//handle a lives lost function when the answer is incorrect
+const handleIncorrectAns = () => {
+    let livesCount = "Lives: &hearts; "
+    const livesCounterArray = livesCount.split()
+    livesCounterIndex--;
+    livesCounter.textContent = "Lives: &hearts;";
+    if(livesCounterIndex === 0){
+        questionNumber.style.display = "hidden";
+        document.body.style.backgroundColor = "D90808";
+    }
+}
+
+//validate correct answer, if answer is correct push currentQuestion, if not, lose a life. if all three lives lost, restart from beginning.
+const validateCorrectAns= (answerClicked: string) => {
+    const correctAnswer = questionBank[currentQuestion].correctAns;
+    if(answerClicked === correctAnswer){
+        currentQuestion++;
+        changeQuestionHTML()
+    } else {
+        handleIncorrectAns();
+    }
+};
+
+
+answerButtonA.addEventListener("click", () => {
+    const selectedAns = answerButtonA?.textContent ?? ""; 
+    validateCorrectAns(selectedAns.toString()); 
+});
+answerButtonB.addEventListener("click", () => {
+    const selectedAns = answerButtonB?.textContent ?? ""; 
+    validateCorrectAns(selectedAns.toString()); 
+});
+answerButtonC.addEventListener("click", () => {
+    const selectedAns = answerButtonC?.textContent ?? ""; 
+    validateCorrectAns(selectedAns.toString()); 
+});
+answerButtonD.addEventListener("click", () => {
+    const selectedAns = answerButtonD?.textContent ?? ""; 
+    validateCorrectAns(selectedAns.toString()); 
+});
+
+//handle when button is pressed, it checks if that value is the correct answer. 
 
 
 
-//lose life is incorrect answer.
+
+//add audio when user gets correct answer.
+//add confetti at the very end

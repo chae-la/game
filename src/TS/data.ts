@@ -1,4 +1,4 @@
-import { Question } from "./type";
+import { Question } from "./type.ts";
 
 export const questionBank: Question[] = [
   {
@@ -66,7 +66,7 @@ export const questionBank: Question[] = [
     questionNum: 11,
     question: "What was the answer to question 2?",
     possibleAns: ["This one", "That one", "This?", "Definitely this"],
-    correctAns: "No, but a tin can",
+    correctAns: "This?",
   },
   {
     questionNum: 12,
