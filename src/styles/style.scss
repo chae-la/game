@@ -43,11 +43,17 @@ body{
 
 .button{
     display: flex;
+    position: absolute;
     margin-top: 15px;
     font-size: 0.5rem;
     background-color:#aef3b1;
     border: none;
     padding: 3px 5px;
+    z-index: 2;
+}
+.congrats{
+    text-align: center;
+    display: none;
 }
 
 @media screen and (min-width: 768px){
