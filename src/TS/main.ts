@@ -10,21 +10,18 @@ const answerButtonA = document.querySelector<HTMLButtonElement>(".answers__butto
 const answerButtonB =document.querySelector<HTMLButtonElement>(".answers__button--b");
 const answerButtonC = document.querySelector<HTMLButtonElement>(".answers__button--c");
 const answerButtonD = document.querySelector<HTMLButtonElement>(".answers__button--d");
+const skipButton = document.querySelector<HTMLButtonElement>(".button");
 
-
-if(!questionNumber || !resetButton || !livesCounter || !changeQuestion || !answerButtonA || !answerButtonB || !answerButtonC || !answerButtonD  ){
+if(!questionNumber || !resetButton || !livesCounter || !changeQuestion || !skipButton || !answerButtonA || !answerButtonB || !answerButtonC || !answerButtonD  ){
     throw new Error("No")
 };
 
-// resetting everything, without having to refresh page.
 const handleResetButton = () => {
     window.location.reload();
 }
 resetButton.addEventListener("click", handleResetButton)
 
 
-
-//change questions, where each button has a different answer
 
 let currentQuestion = 0;
 
@@ -40,8 +37,10 @@ const changeQuestionHTML = () => {
 };
 
 changeQuestionHTML();
+
+
  let livesCounterIndex = 3;
-//handle a lives lost function when the answer is incorrect
+
 
 const handleIncorrectAns = () => {
     livesCounterIndex--;
@@ -54,7 +53,6 @@ const handleIncorrectAns = () => {
     }
 };
 
-//validate correct answer, if answer is correct push currentQuestion, if not, lose a life. if all three lives lost, restart from beginning.
 const validateCorrectAns= (answerClicked: string) => {
     const correctAnswer = questionBank[currentQuestion].correctAns;
     if(answerClicked === correctAnswer){
@@ -83,10 +81,9 @@ answerButtonD.addEventListener("click", () => {
     validateCorrectAns(selectedAns.toString()); 
 });
 
-//handle when button is pressed, it checks if that value is the correct answer. 
 
 
 
-
-//add audio when user gets correct answer.
+//add audio "ding" when user gets correct answer.
 //add confetti at the very end
+// skip button that doesnt do anything and goes around the page whenever it is pressed.
