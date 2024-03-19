@@ -65,24 +65,10 @@ const changeQuestionHTML = () => {
   answerButtonC.innerHTML = query.possibleAns[2];
   answerButtonD.innerHTML = query.possibleAns[3];
 };
-
 changeQuestionHTML();
 
-const randomPosition = () => {
-  const windowWidth = window.innerWidth;
-  const windowHeight = window.innerHeight;
-  const randomX = Math.random() * (windowWidth - 75);
-  const randomY = Math.random() * (windowHeight - 45);
-  return { x: randomX, y: randomY };
-};
-const setRandomPosition = () => {
-  const { x, y } = randomPosition();
-  skipButton.style.left = `${x}px`;
-  skipButton.style.top = `${y}px`;
-};
 
 let livesCounterIndex = 3;
-
 const handleIncorrectAns = () => {
   livesCounterIndex--;
   const constPart = "Lives:";
@@ -91,7 +77,13 @@ const handleIncorrectAns = () => {
   if (livesCounterIndex === 0) {
     questionNumber.style.display = "none";
     skipButton.style.display = "none";
-    document.body.style.backgroundColor = "#d90808";
+    document.body.style.backgroundColor = "#ff4832"
+    answerButtonA.style.display = "none";
+    answerButtonB.style.display = "none";
+    answerButtonC.style.display = "none";
+    answerButtonD.style.display = "none";
+    changeQuestion.innerHTML = "Retry?";
+    
   }
 };
 
@@ -124,6 +116,19 @@ const options = {
   particleCount: 1000,
   spread: 180,
   ticks: 300,
+};
+
+const randomPosition = () => {
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+  const randomX = Math.random() * (windowWidth - 75);
+  const randomY = Math.random() * (windowHeight - 45);
+  return { x: randomX, y: randomY };
+};
+const setRandomPosition = () => {
+  const { x, y } = randomPosition();
+  skipButton.style.left = `${x}px`;
+  skipButton.style.top = `${y}px`;
 };
 
 resetButton.addEventListener("click", handleResetButton);
