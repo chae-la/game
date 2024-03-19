@@ -27,6 +27,11 @@ body{
     text-align: center;
     margin: 30px 0;
 }
+.quiz__img{
+    display: none;
+    width: 10rem;
+    margin: 0 auto;
+}
 
 .answers{
     display: flex;
@@ -84,7 +89,7 @@ body{
         width: 100%;
         gap: 10px;
             &__button{
-                font-size: 2rem;
+                font-size: 1.5rem;
                 width: calc(50% - 20px);
                 height: 8rem;
                 box-shadow: 5px 8px grey;
@@ -118,6 +123,6 @@ body{
         font-size: 5rem;
     }
     .answers__button{
-        font-size: 3rem;
+        font-size: 2rem;
     }
 }

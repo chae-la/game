@@ -34,7 +34,7 @@ export const questionBank: Question[] = [
   {
     questionNum: 6,
     question: "How many letters in their hand?",
-    image: "./images/letters.png",
+    imageSRC: "./assets/images/letters.jpg",
     possibleAns: ["6", "7", "8", "9"],
     correctAns: "9",
   },
@@ -66,7 +66,7 @@ export const questionBank: Question[] = [
     questionNum: 11,
     question: "What was the answer to question 2?",
     possibleAns: ["This one", "That one", "This?", "Definitely this"],
-    correctAns: "This?",
+    correctAns: "This one",
   },
   {
     questionNum: 12,
@@ -84,7 +84,7 @@ export const questionBank: Question[] = [
       "Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch",
     ],
     correctAns:
-      "Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch",
+    "Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch",
   },
   {
     questionNum: 16,
@@ -106,7 +106,7 @@ export const questionBank: Question[] = [
   {
     questionNum: 16,
     question:
-      "✋︎ ■︎♏︎❖︎♏︎❒︎ ◆︎■︎♎︎♏︎❒︎⬧︎⧫︎□︎□︎♎︎ ⧫︎♒︎♏︎ ◻︎□︎♓︎■︎⧫︎ □︎♐︎ ⧫︎♒︎♓︎⬧︎ ♐︎□︎■︎⧫︎📬︎",
+    "✋︎ ■︎♏︎❖︎♏︎❒︎ ◆︎■︎♎︎♏︎❒︎⬧︎⧫︎□︎□︎♎︎ ⧫︎♒︎♏︎ ◻︎□︎♓︎■︎⧫︎ □︎♐︎ ⧫︎♒︎♓︎⬧︎ ♐︎□︎■︎⧫︎📬︎",
     possibleAns: [
       "❄︎♒︎♓︎⬧︎ ♐︎□︎■︎⧫︎ ♓︎⬧︎ ♋︎⬥︎♏︎⬧︎□︎❍︎♏︎",
       "☟︎♓︎ 💣︎◆︎❍︎✏︎ ",
@@ -118,7 +118,7 @@ export const questionBank: Question[] = [
   {
     questionNum: 17,
     question: "What is this?",
-    image: "./images/happy-can.png",
+    imageSRC: "./assets/images/happy-can.png",
     possibleAns: ["American", "Happy Can", "Christmas Can", "Can do attitude"],
     correctAns: "American",
   },

@@ -1,7 +1,7 @@
 export type Question = {
     questionNum: number,
     question: string;
-    image ?: string;
+    imageSRC ?: string;
     possibleAns: string[];
     correctAns: string;
 }

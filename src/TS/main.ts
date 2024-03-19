@@ -27,7 +27,8 @@ const answerButtonD = document.querySelector<HTMLButtonElement>(
 );
 const skipButton = document.querySelector<HTMLButtonElement>(".button");
 const audio = document.querySelector<HTMLAudioElement>(".audio");
-const congrats = document.querySelector<HTMLHeadingElement>(".congrats")
+const congrats = document.querySelector<HTMLHeadingElement>(".congrats");
+const imgElement = document.querySelector<HTMLImageElement>(".quiz__img");
 
 if (
   !questionNumber ||
@@ -38,15 +39,17 @@ if (
   !answerButtonA ||
   !answerButtonB ||
   !answerButtonC ||
-  !answerButtonD || !audio || !congrats
+  !answerButtonD ||
+  !audio ||
+  !congrats ||
+  !imgElement
 ) {
-  throw new Error("No");
+  throw new Error("No, STOP THAT!!");
 }
 
 const handleResetButton = () => {
   window.location.reload();
 };
-resetButton.addEventListener("click", handleResetButton);
 
 let currentQuestion = 0;
 
@@ -54,7 +57,10 @@ const changeQuestionHTML = () => {
   const query = questionBank[currentQuestion];
   questionNumber.innerHTML = query.questionNum.toString();
   changeQuestion.innerHTML = query.question;
-  // add the images for questions that have images.
+  if (query.imageSRC) {
+    imgElement.src = query.imageSRC;
+    imgElement.style.display = "block";
+  }
   answerButtonA.innerHTML = query.possibleAns[0];
   answerButtonB.innerHTML = query.possibleAns[1];
   answerButtonC.innerHTML = query.possibleAns[2];
@@ -63,12 +69,11 @@ const changeQuestionHTML = () => {
 
 changeQuestionHTML();
 
-
 const randomPosition = () => {
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
-  const randomX = Math.random() * windowWidth;
-  const randomY = Math.random() * windowHeight;
+  const randomX = Math.random() * (windowWidth - 75);
+  const randomY = Math.random() * (windowHeight - 45);
   return { x: randomX, y: randomY };
 };
 const setRandomPosition = () => {
@@ -76,8 +81,6 @@ const setRandomPosition = () => {
   skipButton.style.left = `${x}px`;
   skipButton.style.top = `${y}px`;
 };
-
-
 
 let livesCounterIndex = 3;
 
@@ -96,21 +99,22 @@ const handleIncorrectAns = () => {
 const validateCorrectAns = (answerClicked: string) => {
   const correctAnswer = questionBank[currentQuestion].correctAns;
   if (answerClicked === correctAnswer) {
-      if(currentQuestion === questionBank.length - 1){
-        document.body.style.backgroundColor = "d8f8e9";
-        answerButtonA.style.display = "none";
-        answerButtonB.style.display = "none";
-        answerButtonC.style.display = "none";
-        answerButtonD.style.display = "none";
-        changeQuestion.style.display = "none";
-        skipButton.style.display = "none";
-        congrats.style.display ="unset"
-        congrats.style.fontSize = "4rem"
-        confetti(options);
-      }
+    if (currentQuestion === questionBank.length - 1) {
+      document.body.style.backgroundColor = "d8f8e9";
+      answerButtonA.style.display = "none";
+      answerButtonB.style.display = "none";
+      answerButtonC.style.display = "none";
+      answerButtonD.style.display = "none";
+      changeQuestion.style.display = "none";
+      skipButton.style.display = "none";
+      congrats.style.display = "unset";
+      congrats.style.fontSize = "4rem";
+      confetti(options);
+    }
     currentQuestion++;
     audio.currentTime = 0;
-    audio.play()
+    audio.play();
+    imgElement.style.display = "none";
     changeQuestionHTML();
   } else {
     handleIncorrectAns();
@@ -118,11 +122,12 @@ const validateCorrectAns = (answerClicked: string) => {
 };
 
 const options = {
-  particleCount : 1000,
+  particleCount: 1000,
   spread: 180,
   ticks: 300,
-}
+};
 
+resetButton.addEventListener("click", handleResetButton);
 answerButtonA.addEventListener("click", () => {
   const selectedAns = answerButtonA?.textContent ?? "";
   validateCorrectAns(selectedAns.toString());
@@ -140,8 +145,3 @@ answerButtonD.addEventListener("click", () => {
   validateCorrectAns(selectedAns.toString());
 });
 skipButton.addEventListener("click", setRandomPosition);
-
-
-
-
-
