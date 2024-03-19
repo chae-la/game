@@ -131,6 +131,10 @@ const setRandomPosition = () => {
   skipButton.style.top = `${y}px`;
 };
 
+
+
+
+
 resetButton.addEventListener("click", handleResetButton);
 answerButtonA.addEventListener("click", () => {
   const selectedAns = answerButtonA?.textContent ?? "";
