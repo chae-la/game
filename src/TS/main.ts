@@ -1,7 +1,6 @@
 import { questionBank } from "./data.ts";
 import confetti from "canvas-confetti";
 
-console.log(questionBank);
 
 const questionNumber =
   document.querySelector<HTMLHeadingElement>(".div__heading--num");
