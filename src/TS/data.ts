@@ -84,7 +84,7 @@ export const questionBank: Question[] = [
       "Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch",
     ],
     correctAns:
-    "Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch",
+      "Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch",
   },
   {
     questionNum: 16,
@@ -106,7 +106,7 @@ export const questionBank: Question[] = [
   {
     questionNum: 16,
     question:
-    "✋︎ ■︎♏︎❖︎♏︎❒︎ ◆︎■︎♎︎♏︎❒︎⬧︎⧫︎□︎□︎♎︎ ⧫︎♒︎♏︎ ◻︎□︎♓︎■︎⧫︎ □︎♐︎ ⧫︎♒︎♓︎⬧︎ ♐︎□︎■︎⧫︎📬︎",
+      "✋︎ ■︎♏︎❖︎♏︎❒︎ ◆︎■︎♎︎♏︎❒︎⬧︎⧫︎□︎□︎♎︎ ⧫︎♒︎♏︎ ◻︎□︎♓︎■︎⧫︎ □︎♐︎ ⧫︎♒︎♓︎⬧︎ ♐︎□︎■︎⧫︎📬︎",
     possibleAns: [
       "❄︎♒︎♓︎⬧︎ ♐︎□︎■︎⧫︎ ♓︎⬧︎ ♋︎⬥︎♏︎⬧︎□︎❍︎♏︎",
       "☟︎♓︎ 💣︎◆︎❍︎✏︎ ",

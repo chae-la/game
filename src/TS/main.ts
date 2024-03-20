@@ -1,7 +1,6 @@
 import { questionBank } from "./data.ts";
 import confetti from "canvas-confetti";
 
-
 const questionNumber =
   document.querySelector<HTMLHeadingElement>(".div__heading--num");
 const resetButton = document.querySelector<HTMLButtonElement>(
@@ -67,7 +66,6 @@ const changeQuestionHTML = () => {
 };
 changeQuestionHTML();
 
-
 let livesCounterIndex = 3;
 const handleIncorrectAns = () => {
   livesCounterIndex--;
@@ -77,13 +75,12 @@ const handleIncorrectAns = () => {
   if (livesCounterIndex === 0) {
     questionNumber.style.display = "none";
     skipButton.style.display = "none";
-    document.body.style.backgroundColor = "#ff4832"
+    document.body.style.backgroundColor = "#ff4832";
     answerButtonA.style.display = "none";
     answerButtonB.style.display = "none";
     answerButtonC.style.display = "none";
     answerButtonD.style.display = "none";
     changeQuestion.innerHTML = "Retry?";
-    
   }
 };
 
@@ -130,10 +127,6 @@ const setRandomPosition = () => {
   skipButton.style.left = `${x}px`;
   skipButton.style.top = `${y}px`;
 };
-
-
-
-
 
 resetButton.addEventListener("click", handleResetButton);
 answerButtonA.addEventListener("click", () => {

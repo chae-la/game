@@ -3,130 +3,130 @@
 $primary-color: antiquewhite;
 $secondary-color: black;
 
-body{
-    background-color: $primary-color;
-    
-    margin: 40px;
+body {
+  background-color: $primary-color;
+
+  margin: 40px;
 }
 
-.div__heading{
+.div__heading {
+  display: flex;
+  justify-content: space-between;
+  &--num {
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 2rem;
     display: flex;
-    justify-content: space-between;
-        &--num{
-            border: 2px solid black;
-            border-radius: 50%;
-            width: 2rem;
-            display: flex;
-            justify-content: center;
-        }
-        &--reset{
-            width: 2rem;
-        }
+    justify-content: center;
+  }
+  &--reset {
+    width: 2rem;
+  }
 }
-.quiz__question{
-    text-align: center;
-    margin: 30px 0;
+.quiz__question {
+  text-align: center;
+  margin: 30px 0;
 }
-.quiz__img{
-    display: none;
-    width: 60%;
-    margin: 0 auto;
+.quiz__img {
+  display: none;
+  width: 60%;
+  margin: 0 auto;
 }
 
-.answers{
+.answers {
+  display: flex;
+  flex-direction: column;
+
+  width: 15rem;
+  &__button {
+    margin-top: 10px;
+    background-color: white;
+    border: 3px solid #504646;
+    box-shadow: 3px 5px grey;
+  }
+}
+
+.button {
+  display: flex;
+  position: absolute;
+  margin-top: 15px;
+  font-size: 0.5rem;
+  background-color: #aef3b1;
+  border: none;
+  padding: 3px 5px;
+  z-index: 2;
+}
+.congrats {
+  text-align: center;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    margin: 60px;
+  }
+  .div__heading {
+    &--num {
+      font-size: 3rem;
+      border: 4px solid black;
+      width: 4rem;
+    }
+    &--lives {
+      font-size: 3rem;
+    }
+    &--reset {
+      width: 4rem;
+    }
+  }
+  .quiz__question {
+    font-size: 4rem;
+    margin: 40px 0;
+  }
+  .answers {
     display: flex;
-    flex-direction: column;
-
-    width: 15rem;
-    &__button{
-        margin-top: 10px;
-        background-color: white;
-        border: 3px solid #504646;
-        box-shadow: 3px 5px grey;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+    &__button {
+      font-size: 1.5rem;
+      width: calc(50% - 20px);
+      height: 8rem;
+      box-shadow: 5px 8px grey;
+      border: 5px solid #504646;
     }
+  }
+  .button {
+    font-size: 1.25rem;
+    padding: 4px 10px;
+  }
 }
 
-.button{
-    display: flex;
-    position: absolute;
-    margin-top: 15px;
-    font-size: 0.5rem;
-    background-color:#aef3b1;
-    border: none;
-    padding: 3px 5px;
-    z-index: 2;
-}
-.congrats{
-    text-align: center;
-    display: none;
-}
-
-@media screen and (min-width: 768px){
-    body{
-        margin: 60px;
+@media screen and (min-width: 1024px) {
+  body {
+    margin: 80px;
+  }
+  .div__heading {
+    &--num {
+      font-size: 4rem;
+      border: 5px solid black;
+      width: 5rem;
     }
-    .div__heading{
-        &--num{
-            font-size: 3rem;
-            border: 4px solid black;
-            width: 4rem
-        }
-        &--lives{
-            font-size: 3rem;
-        }
-        &--reset{
-            width: 4rem;
-        }
+    &--lives {
+      font-size: 4rem;
     }
-    .quiz__question{
-        font-size: 4rem;
-        margin: 40px 0;
+    &--reset {
+      width: 5rem;
     }
-    .answers{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 100%;
-        gap: 10px;
-            &__button{
-                font-size: 1.5rem;
-                width: calc(50% - 20px);
-                height: 8rem;
-                box-shadow: 5px 8px grey;
-                border: 5px solid #504646;
-            }
-    }
-    .button{
-        font-size: 1.25rem;
-        padding: 4px 10px;
-    }
-}
-
-@media screen and (min-width:1024px) {
-    body{
-        margin: 80px;
-    }
-    .div__heading{
-        &--num{
-            font-size: 4rem;
-            border: 5px solid black;
-            width: 5rem;
-        }
-        &--lives{
-            font-size: 4rem;
-        }
-        &--reset{
-            width: 5rem;
-        }
-    }
-    .quiz__question{
-        font-size: 5rem;
-    }
-    .answers__button{
-        font-size: 2rem;
-    }
-    .button{
-        font-size: 1.5rem;
-        padding: 5px 12px;
-    }
+  }
+  .quiz__question {
+    font-size: 5rem;
+  }
+  .answers__button {
+    font-size: 2rem;
+  }
+  .button {
+    font-size: 1.5rem;
+    padding: 5px 12px;
+  }
 }
