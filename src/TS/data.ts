@@ -34,7 +34,7 @@ export const questionBank: Question[] = [
   {
     questionNum: 6,
     question: "How many letters in their hand?",
-    imageSRC: "./assets/images.letters.jpg",
+    imageSRC: "./assets/images/letters.jpg",
     possibleAns: ["6", "7", "8", "9"],
     correctAns: "9",
   },
