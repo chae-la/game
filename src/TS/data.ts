@@ -34,7 +34,7 @@ export const questionBank: Question[] = [
   {
     questionNum: 6,
     question: "How many letters in their hand?",
-    imageSRC: "./assets/images/letters.jpg",
+    imageSRC: "./Public/assets/images.letters.jpg",
     possibleAns: ["6", "7", "8", "9"],
     correctAns: "9",
   },
@@ -118,7 +118,7 @@ export const questionBank: Question[] = [
   {
     questionNum: 17,
     question: "What is this?",
-    imageSRC: "./assets/images/happy-can.png",
+    imageSRC: "./Public/assets/images/happy-can.png",
     possibleAns: ["American", "Happy Can", "Christmas Can", "Can do attitude"],
     correctAns: "American",
   },

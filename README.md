@@ -27,7 +27,7 @@ A slightly frustrating game testing your knowledge and ability to think outside 
 
 ## Game Preview
 
-![An image of the game](/assets/images/game-screenshot.png "image of game")
+![An image of the game](/Public/assets/images/game-screenshot.png "image of game")
 
 ## Features
 
